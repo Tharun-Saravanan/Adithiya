@@ -424,13 +424,9 @@ function initSmoothScroll() {
                     const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
                     const targetPosition = target.offsetTop - headerHeight;
 
-                    gsap.to(window, {
-                        scrollTo: {
-                            y: targetPosition,
-                            autoKill: false
-                        },
-                        duration: 1.2,
-                        ease: 'power3.inOut'
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             }
